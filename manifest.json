@@ -1,0 +1,13 @@
+{
+	"manifest_version": 2,
+
+	"name": "RandomQuote",
+	"description": "Random quote on each new tab.",
+	"version": "0.0.1",
+
+	"author": "Chirag",
+
+	"chrome_url_overrides" : {
+		"newtab": "customNewTab.html"
+	}
+}
