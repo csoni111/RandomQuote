@@ -1,13 +1,16 @@
 {
-	"manifest_version": 2,
+  "manifest_version": 2,
 
-	"name": "RandomQuote",
-	"description": "Random quote on each new tab.",
-	"version": "0.0.1",
+  "name": "RandomQuote",
+  "description": "Random quote on each new tab.",
+  "version": "0.0.1",
 
-	"author": "Chirag",
+  "author": "Chirag",
 
-	"chrome_url_overrides" : {
-		"newtab": "customNewTab.html"
-	}
+  "chrome_url_overrides" : {
+    "newtab": "customNewTab.html"
+  },
+  "permissions": [
+    "http://api.forismatic.com/"
+  ]
 }
