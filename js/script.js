@@ -10,13 +10,18 @@ var fetchNewQuoteLocal = function(callback) {
 
 var fetchNewQuoteOnline = function(callback) {
   var data = {method: 'getQuote', format: 'json', lang: 'en'};
-  $.post('http://api.forismatic.com/api/1.0/', data, function(res, status) {
+  $.post('http://api.forismatic.com/api/1.0/', data)
+  .done(function(res, status) {
     if (status === 'success') {
       callback(res.quoteText, res.quoteAuthor);
     } else {
       fetchNewQuoteLocal(callback);
     }
-  }, 'json');
+  })
+  .fail(function(xhr, status, error) {
+    console.log(error);
+    fetchNewQuoteLocal(callback);
+  });
 }
 
 var changeQuote = function() {
